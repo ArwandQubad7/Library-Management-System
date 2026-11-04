@@ -1,25 +1,16 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllersWithViews();
+
 var app = builder.Build();
 
-app.MapGet("/", () =>
-{
-    return "Welcome to the Library Management System";
-});
+app.UseStaticFiles();
 
-app.MapGet("/books", () =>
-{
-   return "This is where we display the Books"; 
-});
+app.UseRouting();
 
-app.MapGet("/members", () =>
-{
-   return "we Display the Members here"; 
-});
-
-app.MapGet("/borrowings", () =>
-{
-   return "Here we display the Borrowings"; 
-});
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();
