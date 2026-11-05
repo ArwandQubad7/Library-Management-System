@@ -2,20 +2,29 @@
     ViewData["Title"] = "Home";
 }
 
-<h1>Welcome To The Library Management System</h1>
+<div class="text-center">
+    <h1 class="display-4 text-primary">
+        @ViewBag.libraryName
+    </h1>
+    <br />
+    <p class="lead">
+        Welcome to the Index Page!
+    </p>
 
-<p>
-    This is a website for managing books!
-</p>
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h3 class="card-title">
+                Total Books
+            </h3>
 
-<br />
+            <h2 class="text-success">
+                @ViewBag.TotalBooks
+            </h2>
 
-<h2>Our Features</h2>
-
-<ul>
-<li>Manage Books</li>
-<li>Manage Categories</li>
-<li>Manage Members</li>
-<li>Manage Returns</li>
-<li>Exit the System</li>
-</ul>
+            <a class="btn btn-primary"
+               href="/Home/Index">
+                Home
+            </a>
+        </div>
+    </div>
+</div>

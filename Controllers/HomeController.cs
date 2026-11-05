@@ -6,6 +6,9 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
+        ViewBag.LibraryName  = "Erbil Library";
+        ViewBag.TotalBooks = 150;
+
         return View();
     }
 
@@ -14,13 +17,4 @@ public class HomeController : Controller
         return Content("This is the About Page");
     }
 
-    public IActionResult FindBook(int id)
-    {
-        if(id <= 0)
-        {
-            return NotFound();
-        }
-
-        return Content($"This is Book Id: {id}");
-    }
 }
